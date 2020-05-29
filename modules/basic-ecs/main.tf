@@ -12,7 +12,7 @@ resource "aws_ecr_repository" "repo" {
 
 resource "aws_ecs_task_definition" "task" {
   family                   = "${var.name}-task"
-  container_definitions    = file("task.json")
+  container_definitions    = file("${path.module}/task.json")
   task_role_arn            = aws_iam_role.ecs_execution_role.arn
   execution_role_arn       = aws_iam_role.ecs_execution_role.arn
   requires_compatibilities = ["FARGATE"]

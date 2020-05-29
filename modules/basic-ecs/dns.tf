@@ -5,7 +5,7 @@ resource "aws_route53_record" "dns" {
 
   alias {
     name                   = aws_alb.lb.dns_name
-    zone_id                = aws_alb.lb.dns_name
+    zone_id                = var.route53_zone_id
     evaluate_target_health = true
   }
 }
