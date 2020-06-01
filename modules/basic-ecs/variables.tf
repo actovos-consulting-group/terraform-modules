@@ -28,3 +28,8 @@ variable "default_tags" {
     Terraform : "1",
   }
 }
+
+variable "health_check_path" {
+  type    = string
+  default = "/"
+}
