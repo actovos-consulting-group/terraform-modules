@@ -7,6 +7,14 @@ variable "worker_instance_type" {
   default = "t2.medium"
 }
 
+variable "vpc_id" {
+  type    = string
+}
+
+variable "eks_subnet_ids" {
+  type    = list
+}
+
 variable "default_tags" {
   type = map
   default = {

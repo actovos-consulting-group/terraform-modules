@@ -24,8 +24,8 @@ module "eks" {
   source       = "terraform-aws-modules/eks/aws"
   version      = "12.0.0"
   cluster_name = var.cluster_name
-  subnets      = module.vpc.private_subnets
-  vpc_id       = module.vpc.vpc_id
+  subnets      = var.eks_subnet_ids
+  vpc_id       = var.vpc_id
   map_roles = [
     {
       "groups" : ["system:masters"],
